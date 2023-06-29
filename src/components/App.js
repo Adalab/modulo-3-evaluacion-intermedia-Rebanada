@@ -59,31 +59,34 @@ const App = () => {
         <h1 className='title'>Frases de Friends</h1>
       </header>
       <div className='form'>
-        <label className='filter'>Filtrar por frase:</label>
-        <input
-          type='text'
-          id='searchInput'
-          value={searchText}
-          onChange={handleSearch}
-        />
+        <form>
+          <label className='filter'>Filtrar por frase:</label>
+          <input
+            type='text'
+            id='searchInput'
+            value={searchText}
+            onChange={handleSearch}
+          />
+        </form>
       </div>
-      <div className='form'>
-        <label className='filter'>Filtrar por personaje:</label>
-        <select
-          id='characterSelect'
-          value={selectedCharacter}
-          onChange={handleCharacterChange}
-        >
-          <option value='Todos'>Todos</option>
-          <option value='Ross'>Ross</option>
-          <option value='Monica'>Monica</option>
-          <option value='Joey'>Joey</option>
-          <option value='Phoebe'>Phoebe</option>
-          <option value='Chandler'>Chandler</option>
-          <option value='Rachel'>Rachel</option>
-        </select>
-      </div>
-
+      <form>
+        <div className='form'>
+          <label className='filter'>Filtrar por personaje:</label>
+          <select
+            id='characterSelect'
+            value={selectedCharacter}
+            onChange={handleCharacterChange}
+          >
+            <option value='Todos'>Todos</option>
+            <option value='Ross'>Ross</option>
+            <option value='Monica'>Monica</option>
+            <option value='Joey'>Joey</option>
+            <option value='Phoebe'>Phoebe</option>
+            <option value='Chandler'>Chandler</option>
+            <option value='Rachel'>Rachel</option>
+          </select>
+        </div>
+      </form>
       <ul>
         {filteredQuotes.map((quote, index) => (
           <li className='list' key={index}>
